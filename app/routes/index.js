@@ -1,5 +1,6 @@
 const router = require('express').Router()
 
-router.get('/', require('./helloWorld'))
+router.use('/group1', require('./group1'))
+router.use('/group2', require('./group2'))
 
 module.exports = router
