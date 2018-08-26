@@ -2,11 +2,11 @@ FROM node:10.7.0-alpine
 
 WORKDIR /app
 
-COPY package.json package-lock.json ./
+COPY package.json yarn.lock ./
 
 ENV NODE_ENV production
 
-RUN npm install --production
+RUN yarn install --production
 
 COPY . .
 
