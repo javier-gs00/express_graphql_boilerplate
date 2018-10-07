@@ -4,6 +4,7 @@ const dogs = require('../../controllers/dogs')
 
 router.use(bodyParser.json())
 router.post('/salute', dogs.salute)
-router.post('/perform-action', dogs.performAction)
+router.get('/actions', dogs.getActions)
+router.post('/actions', dogs.performAction)
 
 module.exports = router

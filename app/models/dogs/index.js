@@ -15,4 +15,8 @@ Dog.prototype.performAction = function(action) {
 	return `${this.name} will now ${action}`
 }
 
+Dog.prototype.getActions = function() {
+	return `Available actions are: ${this.actions.join(', ')}.`
+}
+
 module.exports = Dog
