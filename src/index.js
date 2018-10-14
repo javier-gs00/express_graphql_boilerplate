@@ -1,7 +1,10 @@
-const express = require('express')
-const morgan = require('morgan')
-const cors = require('cors')
+require('dotenv').config()
+import express from 'express'
+import morgan from 'morgan'
+import cors from 'cors'
+import { routes } from 'Routes'
 
+const PORT = process.env.PORT || 8000
 const app = express()
 
 app.use(cors())
@@ -13,7 +16,7 @@ app.use(
 	)
 )
 
-app.use('/api', require('./routes'))
+app.use('/api', routes)
 
 // error handler
 app.use(function(err, req, res, next) {
@@ -26,4 +29,4 @@ app.use(function(req, res, next) {
 	res.status(404).send("Sorry can't find that!")
 })
 
-module.exports = app
+app.listen(PORT, () => console.log(`server listening on port ${PORT}`))

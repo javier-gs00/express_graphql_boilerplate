@@ -1,15 +1,15 @@
-FROM node:10.7.0-alpine
+FROM node:10.12.0-alpine
 
 WORKDIR /app
 
 COPY package.json yarn.lock ./
 
-ENV NODE_ENV production
+RUN yarn --production
 
-RUN yarn install --production
+COPY dist /app/dist
 
-COPY . .
+RUN yarn cache clean
 
 EXPOSE 8000
 
-CMD ["node", "index.js"]
+CMD ["node", "dist/index.js"]
