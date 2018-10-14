@@ -12,7 +12,9 @@
     "url": "https://github.com/javier-gs00/express_boilerplate"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "nodemon --exec babel-node src/index.js",
+    "build": "rm -rf dist && babel src --out-dir dist",
+    "serve": "node dist/index.js"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
@@ -25,5 +27,12 @@
     "node": ">=8.x",
     "npm": ">=5.x",
     "yarn": ">=1.7.x"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/node": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "babel-plugin-module-resolver": "^3.1.1"
   }
 }
