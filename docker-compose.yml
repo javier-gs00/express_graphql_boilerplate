@@ -3,7 +3,7 @@ version: '3'
 services:
   express_app:
     build: .
-    image: image_name
+    image: express_boilerplate
     ports:
       - '8000:8000'
     restart: always
