@@ -2,7 +2,7 @@ require('dotenv').config()
 import express from 'express'
 import morgan from 'morgan'
 import cors from 'cors'
-import { routes } from './routes'
+import { routes } from 'Routes'
 
 const PORT = process.env.PORT || 8000
 const app = express()

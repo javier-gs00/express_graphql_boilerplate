@@ -6,7 +6,9 @@
     ["module-resolver", {
       "root": ["./"],
       "alias": {
-        "Src": "./src/graphql"
+        "Controllers": "./src/controllers",
+        "Models": "./src/models",
+        "Routes": "./src/routes"
       }
     }]
   ]

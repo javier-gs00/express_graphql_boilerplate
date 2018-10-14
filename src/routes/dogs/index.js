@@ -1,6 +1,6 @@
 import express from 'express'
 import bodyParser from 'body-parser'
-import dogs from '../../controllers/dogs'
+import dogs from 'Controllers/dogs'
 
 const router = express.Router()
 
