@@ -1,5 +1,8 @@
-const router = require('express').Router()
+import express from 'express'
+import { dogRoutes } from './dogs'
 
-router.use('/dogs', require('./dogs'))
+const router = express.Router()
 
-module.exports = router
+router.use('/dogs', dogRoutes)
+
+export { router as routes }

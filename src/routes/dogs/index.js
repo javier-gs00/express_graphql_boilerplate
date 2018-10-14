@@ -1,10 +1,12 @@
-const router = require('express').Router()
-const bodyParser = require('body-parser')
-const dogs = require('../../controllers/dogs')
+import express from 'express'
+import bodyParser from 'body-parser'
+import dogs from '../../controllers/dogs'
+
+const router = express.Router()
 
 router.use(bodyParser.json())
 router.post('/salute', dogs.salute)
 router.get('/actions', dogs.getActions)
 router.post('/actions', dogs.performAction)
 
-module.exports = router
+export { router as dogRoutes }
