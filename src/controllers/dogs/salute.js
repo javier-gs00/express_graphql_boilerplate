@@ -1,11 +1,9 @@
-const Dog = require('../../models/dogs')
+import Dog from '../../models/dogs'
 
-function dogSalute(req, res, next) {
+export function salute(req, res, next) {
 	const { name } = req.body
 
 	const dog = new Dog(name)
 
 	res.status(200).send(dog.salute())
 }
-
-module.exports = dogSalute

@@ -1,8 +1,8 @@
-const getActions = require('./getActions')
-const performAction = require('./performAction')
-const salute = require('./salute')
+import { getActions } from './getActions'
+import { performAction } from './performAction'
+import { salute } from './salute'
 
-module.exports = {
+export default {
 	getActions,
 	performAction,
 	salute

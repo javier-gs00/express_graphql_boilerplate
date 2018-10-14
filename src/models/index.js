@@ -1,1 +1,1 @@
-require('./dogs')
+import './dogs'

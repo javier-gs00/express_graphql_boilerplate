@@ -1,5 +1,1 @@
-const dogs = require('./dogs')
-
-module.exports = {
-	dogs
-}
+import './dogs'
