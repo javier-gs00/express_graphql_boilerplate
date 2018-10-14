@@ -10,7 +10,7 @@ class Dog {
 		return `Woof (${this.name} says hi)`
 	}
 
-	performAction() {
+	performAction(action) {
 		if (!this.actions.includes(action)) return `${this.name} can't perform ${action}`
 
 		return `${this.name} will now ${action}`
