@@ -1,15 +1,9 @@
-import { getActions } from './getActions'
-import Dog from 'Models/dogs'
+import request from 'supertest'
+import app from '../../'
+import '@babel/polyfill'
 
-test('Controller getActions', () => {
-	const req = { body: { name: 'Bobby' } }
-	const res = {
-		status: function(code) {
-			return {
-				send: jest.fn()
-			}
-		}
-	}
-	getActions(req, res, {})
-	console.log('@@@ res', res.status)
+test('Controller getActions', async () => {
+	const response = await request(app).get('/api/dogs/actions')
+	expect(response.statusCode).toBe(200)
+	expect(response.text).toBe('Available actions are: sit, bark, salute, stand, jump, roll, crawl.')
 })
