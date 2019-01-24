@@ -29,4 +29,8 @@ app.use(function(req, res, next) {
 	res.status(404).send("Sorry can't find that!")
 })
 
-app.listen(PORT, () => console.log(`server listening on port ${PORT}`))
+if (process.env.NODE_ENV !== 'test') {
+	app.listen(PORT, () => console.log(`server listening on port ${PORT}`))
+}
+
+export default app

@@ -14,7 +14,8 @@
   "scripts": {
     "start": "nodemon --exec babel-node src/index.js",
     "build": "rm -rf dist && babel src --out-dir dist",
-    "serve": "node dist/index.js"
+    "serve": "node dist/index.js",
+    "test": "jest --watch"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
@@ -30,9 +31,16 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
-    "@babel/core": "^7.1.2",
+    "@babel/core": "^7.2.2",
     "@babel/node": "^7.0.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.2.0",
+    "@babel/polyfill": "^7.2.5",
     "@babel/preset-env": "^7.1.0",
-    "babel-plugin-module-resolver": "^3.1.1"
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "jest": "^23.6.0",
+    "regenerator-runtime": "^0.13.1",
+    "supertest": "^3.4.2"
   }
 }
