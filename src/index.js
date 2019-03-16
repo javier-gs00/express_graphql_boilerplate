@@ -2,12 +2,18 @@ require('dotenv').config()
 import express from 'express'
 import morgan from 'morgan'
 import cors from 'cors'
+import helmet from 'helmet'
 import { routes } from 'Routes'
 
 const PORT = process.env.PORT || 8000
 const app = express()
 
 app.use(cors())
+app.use(helmet())
+app.use(function(req, res, next) {
+	res.setHeader('X-Content-Type-Options', 'nosniff')
+	next()
+})
 app.use(
 	morgan(
 		process.env.NODE_ENV !== 'production'
@@ -20,8 +26,8 @@ app.use('/api', routes)
 
 // error handler
 app.use(function(err, req, res, next) {
-	res.status(err.status || 500)
-	res.json(err)
+	console.error(err.stack)
+	res.status(500).send(err)
 })
 
 // 404 hanlder
