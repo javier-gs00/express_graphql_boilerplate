@@ -8,6 +8,6 @@ test('Controller salute', async () => {
 		.post('/api/dogs/salute')
 		.send({ name })
 
-	expect(response.statusCode).toBe(200)
+	expect(response.status).toBe(200)
 	expect(response.text).toBe(`Woof (${name} says hi)`)
 })

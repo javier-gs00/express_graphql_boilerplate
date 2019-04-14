@@ -1,6 +1,6 @@
 module.exports = {
 	verbose: false,
 	transform: {
-		'^.+\\.js$': 'babel-jest'
+		'^.+\\.(js|ts)$': 'babel-jest'
 	}
 }
