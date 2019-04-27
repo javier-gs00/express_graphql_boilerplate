@@ -1,4 +1,4 @@
-import Dog from 'Models/dogs'
+import Dog from 'Src/models/dogs'
 
 export function salute(req: any, res: any, next: any) {
 	const { name } = req.body

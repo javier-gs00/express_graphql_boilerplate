@@ -3,7 +3,7 @@ import express from 'express'
 import morgan from 'morgan'
 import cors from 'cors'
 import helmet from 'helmet'
-import { routes } from 'Routes'
+import routes from 'Src/routes'
 
 const PORT = process.env.PORT || 8000
 const app = express()

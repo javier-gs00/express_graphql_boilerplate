@@ -1,5 +1,5 @@
 import request from 'supertest'
-import app from '../../'
+import app from 'Src'
 import '@babel/polyfill'
 
 test('Controller salute', async () => {

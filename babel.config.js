@@ -11,9 +11,7 @@ module.exports = function(api) {
 				{
 					root: ['./'],
 					alias: {
-						Controllers: './src/controllers',
-						Models: './src/models',
-						Routes: './src/routes'
+						Src: './src'
 					}
 				}
 			]

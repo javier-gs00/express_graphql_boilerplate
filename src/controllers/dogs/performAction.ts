@@ -1,4 +1,4 @@
-import Dog from 'Models/dogs'
+import Dog from 'Src/models/dogs'
 
 export function performAction(req: any, res: any, next: any) {
 	const { name, action } = req.body
