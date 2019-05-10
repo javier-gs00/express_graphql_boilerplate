@@ -11,16 +11,16 @@ module.exports = function(api) {
 				{
 					root: ['./'],
 					alias: {
-						Src: './src'
-					}
-				}
+						Src: './src',
+					},
+				},
 			],
-			['@babel/plugin-transform-runtime']
+			['@babel/plugin-transform-runtime'],
 		],
 		env: {
 			test: {
-				presets: [['@babel/preset-env']]
-			}
-		}
+				presets: [['@babel/preset-env']],
+			},
+		},
 	}
 }
