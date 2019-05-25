@@ -1,8 +1,8 @@
 import express, { Router } from 'express'
-import apiRoutes from './api'
+import graphqlRoutes from './graphql'
 
 const router: Router = express.Router()
 
-router.use('/api', apiRoutes)
+router.use('/graphql', graphqlRoutes)
 
 export default router
