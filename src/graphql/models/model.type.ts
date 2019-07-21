@@ -1,7 +1,7 @@
 import * as graphql from 'graphql'
-import { typeType } from './type.type'
+import { typeType } from 'Src/graphql/types/type.type'
 import { brands, types } from 'Src/db'
-import { brandType } from './brand.type'
+import { brandType } from 'Src/graphql/brands/brand.type'
 
 const { GraphQLObjectType, GraphQLString, GraphQLInt, GraphQLID } = graphql
 

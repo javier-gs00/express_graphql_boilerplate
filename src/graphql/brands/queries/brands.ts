@@ -1,5 +1,5 @@
 import * as graphql from 'graphql'
-import { brandType } from 'Src/graphql/types/brand.type'
+import { brandType } from 'Src/graphql/brands/brand.type'
 import { brands as carBrands } from 'Src/db'
 
 const { GraphQLList } = graphql

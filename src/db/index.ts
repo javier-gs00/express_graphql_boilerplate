@@ -81,3 +81,28 @@ export const models = [
 		brandId: brands[2].id,
 	},
 ]
+
+const delay = (model: string): Promise<void> => {
+	return new Promise(
+		(resolve): void => {
+			setTimeout((): void => {
+				console.log(`Fetching ${model}`)
+				resolve()
+			}, 10)
+		},
+	)
+}
+
+export const db = {
+	countries,
+	types,
+	brands,
+	models,
+}
+
+export const getDB = async (model: string): Promise<any[]> => {
+	await delay(model)
+	const result = db[model]
+	if (!result) return []
+	return result
+}
