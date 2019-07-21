@@ -1,7 +1,9 @@
 import * as graphql from 'graphql'
 import { typeType } from 'Src/graphql/types/type.type'
-import { brands, types } from 'Src/db'
 import { brandType } from 'Src/graphql/brands/brand.type'
+import { brandModel } from 'Src/models/brand/brand.model'
+import { typeModel } from 'Src/models/type/type.model'
+import { Model } from 'Src/@types'
 
 const { GraphQLObjectType, GraphQLString, GraphQLInt, GraphQLID } = graphql
 
@@ -13,14 +15,14 @@ export const modelType = new GraphQLObjectType({
 		year: { type: GraphQLInt },
 		type: {
 			type: typeType,
-			resolve(parentValue: any): any {
-				return types.find((type): any => type.id === parentValue.typeId)
+			resolve(parent: Model): any {
+				return typeModel.getById(parent.typeId)
 			},
 		},
 		brand: {
 			type: brandType,
-			resolve(parentValue: any): any {
-				return brands.find((brand): any => brand.id === parentValue.brandId)
+			resolve(parent: Model): any {
+				return brandModel.getById(parent.brandId)
 			},
 		},
 	},

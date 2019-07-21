@@ -1,12 +1,12 @@
 import * as graphql from 'graphql'
 import { modelType } from 'Src/graphql/models/model.type'
-import { models as carModels } from 'Src/db'
+import { modelModel } from 'Src/models/model/model.model'
 
 const { GraphQLList } = graphql
 
 export const models = {
 	type: new GraphQLList(modelType),
 	resolve(): any {
-		return carModels
+		return modelModel.getAll()
 	},
 }

@@ -1,6 +1,14 @@
-// fake db
+import { Country, Type, Brand, Model } from 'Src/@types'
 
-export const countries = [
+// fake db
+interface DB {
+	countries: Country[]
+	types: Type[]
+	brands: Brand[]
+	models: Model[]
+}
+
+export const countries: Country[] = [
 	{
 		id: '1',
 		name: 'Germany',
@@ -18,7 +26,7 @@ export const countries = [
 	},
 ]
 
-export const types = [
+export const types: Type[] = [
 	{
 		id: '1',
 		name: 'Coupe',
@@ -33,7 +41,7 @@ export const types = [
 	},
 ]
 
-export const brands = [
+export const brands: Brand[] = [
 	{
 		id: '1',
 		name: 'Porsche',
@@ -51,32 +59,32 @@ export const brands = [
 	},
 ]
 
-export const models = [
+export const models: Model[] = [
 	{
 		id: '1',
 		name: 'Cayman',
-		year: '2018',
+		year: 2018,
 		typeId: types[0].id,
 		brandId: brands[0].id,
 	},
 	{
 		id: '2',
 		name: 'Yaris',
-		year: '2017',
+		year: 2017,
 		typeId: types[1].id,
 		brandId: brands[1].id,
 	},
 	{
 		id: '3',
 		name: 'F Pace',
-		year: '2019',
+		year: 2019,
 		typeId: types[2].id,
 		brandId: brands[2].id,
 	},
 	{
 		id: '4',
 		name: 'F Type',
-		year: '2018',
+		year: 2018,
 		typeId: types[0].id,
 		brandId: brands[2].id,
 	},
@@ -93,14 +101,14 @@ const delay = (model: string): Promise<void> => {
 	)
 }
 
-export const db = {
+export const db: DB = {
 	countries,
 	types,
 	brands,
 	models,
 }
 
-export const getDB = async (model: string): Promise<any[]> => {
+export const getDB = async <K extends keyof DB>(model: K): Promise<DB[K]> => {
 	await delay(model)
 	const result = db[model]
 	if (!result) return []

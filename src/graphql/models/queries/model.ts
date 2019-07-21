@@ -1,13 +1,14 @@
 import * as graphql from 'graphql'
 import { modelType } from 'Src/graphql/models/model.type'
-import { models as carModels } from 'Src/db'
+import { modelModel } from 'Src/models/model/model.model'
+import { Model } from 'Src/@types'
 
 const { GraphQLNonNull, GraphQLID } = graphql
 
 export const model = {
 	type: modelType,
 	args: { id: { type: new GraphQLNonNull(GraphQLID) } },
-	resolve(parentValue: any, { id }: any): any {
-		return carModels.find((carModel): any => carModel.id === id)
+	resolve(parent: Model, { id }: { id: string }): any {
+		return modelModel.getById(id)
 	},
 }
